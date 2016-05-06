@@ -1,0 +1,26 @@
+{
+	"name": "ElectroOneNote",
+	"version": "0.0.1",
+	"description": "Electron web One Note wrapper",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GeordieP/electron-quick-start.git"
+	},
+	"keywords": [
+		"Electron",
+		"One Note"
+	],
+	"author": "GitHub",
+	"license": "CC0-1.0",
+	"dependencies": {
+		"configstore": "^2.0.0"
+	},
+	"devDependencies": {
+		"electron-prebuilt": "^0.36.0",
+		"electron-packager": "^5.2.1"
+	}
+}
