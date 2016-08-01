@@ -1,7 +1,7 @@
 #One Note Electron Wrapper
-
-##Please note: This is only a wrapper for the one note web client.
-##The wrapper is based on https://github.com/GeordieP/ work!
+==========================
+Please note: This is only a wrapper for the one note web client.
+The wrapper is based on https://github.com/GeordieP/ work!
 
 The One Note desktop client is not avalible on Linux. You can use this wrapper as a desktop client for your notes without having to clutter you browser.
 
