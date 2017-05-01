@@ -1,4 +1,4 @@
-#One Note Electron Wrapper
+# One Note Electron Wrapper
 
 Please note: This is only a wrapper for the one note web client.
 The wrapper is based on https://github.com/GeordieP/ work!
