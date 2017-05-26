@@ -1,12 +1,13 @@
 'use strict';
 
-const electron = require('electron');
-const ipc = electron.ipcMain;
-const app = electron.app;
+const electron      = require('electron');
+const ipc           = electron.ipcMain;
+const app           = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
+const path          = require('path');
 const configstore = require('configstore');
-const pkg = require('./package.json');
+const pkg         = require('./package.json');
 const conf = new configstore(pkg.name, {
 	"windowBounds": {
 		"x": 100,
@@ -19,9 +20,20 @@ const conf = new configstore(pkg.name, {
 let mainWindow;
 
 function createWindow () {
-	mainWindow = new BrowserWindow({width: 500, height: 500, frame: false, "node-integration": false, preload: __dirname + '/app/js/preloadInit.js'});
+	mainWindow = new BrowserWindow({
+		width:              500,
+		height:             500,
+		frame:              false,
+		"node-integration": false,
+		preload:            __dirname + '/app/js/preloadInit.js',
+		icon:               path.join(__dirname, 'app/images/onenote.png'),
+		title:              'OneNote'
+	});
+
 	mainWindow.setBounds(conf.get('windowBounds'));
 	mainWindow.loadURL('file://' + __dirname + '/app/index.html');
+	mainWindow.webContents.openDevTools();
+
 
 	mainWindow.on('closed', function() {
 		mainWindow = null;
