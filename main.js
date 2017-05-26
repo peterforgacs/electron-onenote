@@ -32,8 +32,6 @@ function createWindow () {
 
 	mainWindow.setBounds(conf.get('windowBounds'));
 	mainWindow.loadURL('file://' + __dirname + '/app/index.html');
-	mainWindow.webContents.openDevTools();
-
 
 	mainWindow.on('closed', function() {
 		mainWindow = null;
