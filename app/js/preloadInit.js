@@ -3,7 +3,7 @@
 	var shell = require('shell');
 	var ipc = require('electron').ipcRenderer;
 
-	var cssPath = __dirname + '/../css/skypeStyles/onenote.css';
+	var cssPath = __dirname + '/../css/onenoteStyles/onenote.css';
 	var cssData;
 
 	var remote = require('remote');
@@ -19,6 +19,10 @@
 	window.electronWindowSetup = function() {
 		var webView = document.getElementById("onenote-webview");
 		webView.addEventListener('did-stop-loading', function(event) {
+			webView.insertCSS(window.cssData);
+		});
+
+		webView.addEventListener('did-navigate', function(event){	
 			webView.insertCSS(window.cssData);
 		});
 
